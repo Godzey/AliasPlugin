@@ -30,8 +30,26 @@ public class Main extends JavaPlugin {
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
 		
+		if (label.equalsIgnoreCase("alias")) {
+			if(args.length >= 1) {
+				if(args[0].equalsIgnoreCase("new"))
+					return commandnew(sender, args);
+					
+			}
+			return true;
+		}
 		
+		private boolean commandNew(CommandSender sender1, String[] args){
+			if(args.length >=2) {
+				//add the new alias to the .txt file...
+				//this should be do-able trough commands or just editing the .txt file!
+				log.info("Adding " + String + " to alias.txt...");
+			}
+			else
+				sender.sendMessage("Not enough arguments");
+			
+			return true; //for the command executor
+		}
 		
-		return false;
 	}
 }
